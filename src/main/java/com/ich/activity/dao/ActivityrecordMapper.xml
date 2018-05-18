@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ich.activity.dao.ActivityrecordMapper" >
+
+    <insert id="insert" parameterType="com.ich.activity.pojo.Activityrecord">
+        INSERT INTO e_activity_record(id,activityid,logicid,userid,username,createtime,havprize,prizenames)
+        VALUES(#{id},#{activityid},#{logicid},#{userid},#{username},#{createtime},#{havprize},#{prizenames})
+    </insert>
+
+</mapper>

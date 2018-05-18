@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ich.activity.dao.ActivitytriggerMapper" >
+
+    <insert id="insert" parameterType="com.ich.activity.pojo.Activitytrigger" >
+        INSERT INTO e_activity_trigger(code,name,remark,rewardsystem,serviceimpl)
+        VALUES(#{code},#{name},#{remark},#{rewardsystem},#{serviceimpl})
+    </insert>
+
+    <select id="selectById" parameterType="String" resultType="com.ich.activity.pojo.Activitytrigger">
+        SELECT * FROM e_activity_trigger WHERE code = #{code}
+    </select>
+
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ich.activity.dao.ActivityprizeMapper" >
+
+
+    <update id="updateSurnum" >
+        UPDARE e_activity_prize SET surnum = surnum - #{issuenum} WHERE id = #{id} AND surnum &gt;= issuenum
+    </update>
+
+    <select id="selectByLogicId" parameterType="String" resultType="com.ich.activity.pojo.Activityprize">
+        SELECT * FROM e_activity_prize
+        WHERE logicid = #{logicid}
+        ORDER BY grp,grponum ASC
+    </select>
+
+    <select id="selectDafByGrp" resultType="com.ich.activity.pojo.Activityprize">
+        SELECT * FROM e_activity_prize
+        WHERE logicid = #{logicid} AND grp = #{grp} AND grpdelf = 1
+    </select>
+
+
+
+</mapper>

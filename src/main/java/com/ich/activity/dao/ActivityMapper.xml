@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ich.activity.dao.ActivityMapper" >
+
+    <select id="selectEffectiveList" parameterType="String" resultType="com.ich.activity.pojo.Activity">
+        SELECT * FROM e_activity
+        WHERE code = #{code} AND starttime &lt;= now() AND endtime &gt; now() AND status = 2
+    </select>
+
+</mapper>
